@@ -22,3 +22,22 @@ This is a simple implementation of a blockchain in Go, with Redis for inter-clie
    ```bash
    git clone <repository-url>
    cd go-blockchain
+
+2. Install dependencies:
+    ```bash
+    go get -u github.com/go-redis/redis/v8
+    go get -u github.com/syndtr/goleveldb/leveldb
+
+3. Run the main program:
+    ```bash
+    go run main.go
+
+## Configuration
+- Update the Redis connection details in blockchain.go if your Redis server is running on a different address.
+- Adjust LevelDB settings based on your requirements.
+
+## Contributing
+- Contributions are welcome! Please create a new branch for your changes and submit a pull request.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
