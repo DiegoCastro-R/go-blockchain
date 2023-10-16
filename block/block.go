@@ -1,14 +1,25 @@
 package block
 
-import "fmt"
+import (
+	"crypto/ecdsa"
+	"fmt"
+)
 
-// Block represents a block in the blockchain.
+type Transaction struct {
+	From   *ecdsa.PublicKey
+	To     *ecdsa.PublicKey
+	Amount int
+	// Add more fields as needed
+}
+
+// Add a Transactions field to your Block struct
 type Block struct {
-	Index     int
-	PrevHash  string
-	Hash      string
-	TimeStamp string
-	Data      string
+	Index        int
+	PrevHash     string
+	Hash         string
+	TimeStamp    string
+	Data         string
+	Transactions []*Transaction
 }
 
 // createGenesisBlock creates the genesis block.package block
@@ -28,3 +39,5 @@ func CreateGenesisBlock() *Block {
 func CalculateHash(block *Block) string {
 	return fmt.Sprintf("%d%s%s%s", block.Index, block.PrevHash, block.TimeStamp, block.Data)
 }
+
+// generateKeyPair generates a new key pair.
